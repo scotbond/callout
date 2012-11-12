@@ -52,14 +52,14 @@
         Content *content = [Content new];
         content.iconURL = [[NSBundle mainBundle] URLForResource:@"emoji-ghost" withExtension:@"png"];
         //content.calloutView = [CalloutView class];
-        content.calloutView = [MyCalloutView class];
+        //content.calloutView = [MyCalloutView class];
         content.coordinate = coord;
         content.values = [NSDictionary dictionaryWithObjectsAndKeys:@"Booo!",@"title", nil];
         
         Annotation *anno = [[Annotation alloc] initWithContent:content];
-
+        [content release];
         //anno.title = [NSString stringWithFormat:@"%d",i];
-        anno.mapView = mapView;
+        //anno.mapView = mapView;
         [randomAnnotations addObject:anno];
         [anno release];
     }
@@ -104,7 +104,7 @@
         Content *content = [Content new];
         content.iconURL = [[NSBundle mainBundle] URLForResource:@"emoji-ghost" withExtension:@"png"];
         // content.calloutView = [CalloutView class];
-        content.calloutView = [MyCalloutView class];
+        //content.calloutView = [MyCalloutView class];
         content.coordinate = randomCoord;
         content.values = [NSDictionary dictionaryWithObjectsAndKeys:@"Booo!",@"title", nil];
         Annotation *anno = [[Annotation alloc] initWithContent:content];

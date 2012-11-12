@@ -7,7 +7,7 @@
 @interface Content : NSObject
 
 @property (nonatomic,retain) NSURL *iconURL;       // local or remote URL of the icon
-@property (nonatomic,assign) Class calloutView;    // callout view class
+//@property (nonatomic,assign) Class calloutView;    // callout view class
 @property (nonatomic,retain) NSDictionary *values; // values to be applied on the calloutView instance
 @property (nonatomic,assign) CLLocationCoordinate2D coordinate; // point of the annotation in the map
 

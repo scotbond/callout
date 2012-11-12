@@ -8,7 +8,8 @@
 #import "MapUtil.h"
 #import "AnnotationView.h"
 #import "AnnotationViewProtocol.h"
-#import "AnnotationProtocol.h"
+//#import "AnnotationProtocol.h"
+#import "CalloutAnnotation.h"
 
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>

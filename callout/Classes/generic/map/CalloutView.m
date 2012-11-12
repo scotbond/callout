@@ -15,11 +15,13 @@
 
 - (id)initWithAnnotation:(CalloutAnnotation*)annotation
 {
+    NSLog(@"%s",__FUNCTION__);
     NSString *identifier = NSStringFromClass([self class]);
     self = [super initWithAnnotation:annotation reuseIdentifier:identifier];
-    if (self!=nil){
-        [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
-    }
+    //if (self!=nil){
+    //    [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
+    //}
+    
     
     // prevent the tap and double tap from reaching views underneath
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTouch:)];

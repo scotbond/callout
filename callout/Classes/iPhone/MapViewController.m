@@ -3,6 +3,10 @@
 // See http://stackoverflow.com/questions/8018841/customize-the-mkannotationview-callout/8019308#8019308
 
 #import "MapViewController.h"
+#import "CalloutAnnotation.h"
+#import "MyCalloutView.h"
+#import "AnnotationView.h"
+#import "MySecondCalloutView.h"
 
 /**
  * Delegates (de)selection to a view conforming to the AnnotationViewProtocol.
@@ -11,6 +15,18 @@
 @implementation MapViewController
 
 @synthesize mapView;
+
+
+-(void)viewDidLoad
+{
+    UIButton *zoom_in_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [zoom_in_button addTarget:self
+                       action:@selector(leftButton:)
+             forControlEvents:UIControlEventTouchDown];
+    [zoom_in_button setTitle:@"+" forState:UIControlStateNormal];
+    zoom_in_button.frame = CGRectMake(0.0, 230.0, 50.0, 40.0);
+    [mapView addSubview:zoom_in_button];
+}
 
 
 // toolbar button
@@ -61,19 +77,53 @@
  */
 - (MKAnnotationView *)mapView:(MKMapView *)aMapView viewForAnnotation:(id<MKAnnotation>)annotation 
 {
-    // if this is a custom annotation
-    if ([annotation conformsToProtocol:@protocol(AnnotationProtocol)]) {
+    NSLog(@"%s",__FUNCTION__);
+    if ([annotation isKindOfClass:[Annotation class]]) {
+
+        static NSString *viewId = @"AnnotationView";
+        AnnotationView *annotationView = (AnnotationView*)[aMapView dequeueReusableAnnotationViewWithIdentifier:viewId];
+        if (annotationView==nil){
+            annotationView = [[[AnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:viewId] autorelease];
+            return annotationView;
+            
+        }
+        else
+        {
+            annotationView.annotation = annotation;
+            
+        }
+        return annotationView;
+            
+    }
+    
+    if ([annotation isKindOfClass:[CalloutAnnotation class]])
+    {
+        // dequeue or create a MKAnnotationView
+        static NSString *viewId = @"CalloutAnnotationView";
         
-        // delegate the implementation to it
-        return [((NSObject<AnnotationProtocol>*)annotation) annotationViewInMap:mapView];
+        MyCalloutView *calloutView = (MyCalloutView *)[aMapView dequeueReusableAnnotationViewWithIdentifier:viewId];
         
-    } else {
+        
+        if (calloutView==nil) {
+                calloutView = [[[MyCalloutView alloc] initWithAnnotation:(CalloutAnnotation *)annotation] autorelease];
+        }
+        else
+        {
+            calloutView.annotation = annotation;
+            calloutView.parentAnnotationView = ((CalloutAnnotation *)annotation).parentAnnotationView;
+            
+        }
+        return calloutView;
+        
+    }
+    else
+    {
         
         // else, return a standard annotation view
         static NSString *viewId = @"MKPinAnnotationView";
         MKAnnotationView *view = (MKPinAnnotationView*) [self.mapView dequeueReusableAnnotationViewWithIdentifier:viewId];
         if (view == nil) {
-            view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:viewId];
+            view = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:viewId] autorelease];
         }
         return view;
     }

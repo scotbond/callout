@@ -53,13 +53,15 @@
 /** Create and show the CalloutAnnotation that emulates the callout. */
 - (void)didSelectAnnotationViewInMap:(MKMapView*) mapView;
 {
+    NSLog(@"%s",__FUNCTION__);
     // hack that fixes bug in iOS 6 where an animation interrupts other animations
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .1 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
         Annotation *annotation = (Annotation*)self.annotation;
-        self.calloutAnnotation = [[CalloutAnnotation alloc] initWithContent:annotation.content];
+        NSLog(@"%@",[self.annotation description]);
+        self.calloutAnnotation = [[[CalloutAnnotation alloc] initWithContent:annotation.content] autorelease];
         self.calloutAnnotation.parentAnnotationView = self;
         [mapView addAnnotation:self.calloutAnnotation];
-        [self.calloutAnnotation release];
+        //[self.calloutAnnotation release];
     });
 }
 
@@ -67,6 +69,7 @@
 /** Remove the CalloutAnnotation. */
 - (void)didDeselectAnnotationViewInMap:(MKMapView*) mapView;
 {
+    NSLog(@"%s",__FUNCTION__);
     [mapView removeAnnotation:self.calloutAnnotation];
     self.calloutAnnotation = nil;
 }

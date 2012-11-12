@@ -43,10 +43,27 @@
 }
 
 - (id) initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
+    NSLog(@"%s",__FUNCTION__);
 	if ((self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier])) {
 		self.enabled = NO;
 		self.backgroundColor = [UIColor clearColor];
 	}
+    
+    if (self!=nil){
+        [[NSBundle mainBundle] loadNibNamed:reuseIdentifier owner:self options:nil];
+    }
+    
+    
+    /*
+    // prevent the tap and double tap from reaching views underneath
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTouch:)];
+    [self addGestureRecognizer:tapGestureRecognizer];
+    UITapGestureRecognizer *doubletapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTouch:)];
+    doubletapGestureRecognizer.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:doubletapGestureRecognizer];
+    */
+    
+    
 	return self;
 }
 
@@ -183,9 +200,13 @@
 - (void)didMoveToSuperview {
 	[self adjustMapRegionIfNeeded];
 	[self animateIn];
+// fixes bug in iOS 6 that displays custom annotations behind map annotations    
+    [self.superview bringSubviewToFront:self];
+    
 }
 
 - (void)drawRect:(CGRect)rect {
+    NSLog(@"%s",__FUNCTION__);    
 	CGFloat stroke = 1.0;
 	CGFloat radius = 7.0;
 	CGMutablePathRef path = CGPathCreateMutable();
@@ -322,15 +343,6 @@
     [super dealloc];
 }
 
-- (void)didSelectAnnotationViewInMap:(MKMapView *)mapView
-{
-    
-}
-
-- (void)didDeselectAnnotationViewInMap:(MKMapView *)mapView
-{
-
-}
 
 - (void)setContentView:(UIView *)newContentView
 {

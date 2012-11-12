@@ -7,7 +7,7 @@
 @implementation Content
 
 @synthesize iconURL     = _iconURL;
-@synthesize calloutView = _calloutView;
+//@synthesize calloutView = _calloutView;
 @synthesize values      = _values;
 @synthesize coordinate  = _coordinate;
 

@@ -9,8 +9,6 @@
 @synthesize title          = _title;
 @synthesize subtitle       = _subtitle;
 @synthesize coordinate     = _coordinate;
-@synthesize mapView        = _mapView;
-@synthesize annotationView = _annotationView;
 @synthesize content        = _content;
 
 
@@ -22,28 +20,12 @@
     
     // not sure why or when this happens...
     // Add self to the map, and set self as the annotation for the referenced view.
-    [self.mapView addAnnotation:self];
-    if (_annotationView) {
-        [_annotationView setAnnotation:self];
-    }
+    //[self.mapView addAnnotation:self];
+    //if (_annotationView) {
+    //    [_annotationView setAnnotation:self];
+    //}
 }
 
-
-#pragma mark AnnotationProtocol
-
-- (MKAnnotationView*)annotationViewInMap:(MKMapView*) aMapView;
-{
-    if (self.annotationView) {
-        self.annotationView.annotation = self;
-    } else {
-        static NSString *viewId = @"AnnotationView";
-        self.annotationView = [(AnnotationView*)[aMapView dequeueReusableAnnotationViewWithIdentifier:viewId] retain];
-        if (self.annotationView==nil){
-            self.annotationView = [[AnnotationView alloc] initWithAnnotation:self reuseIdentifier:viewId];
-        }
-    }
-    return self.annotationView;
-}
 
 
 #pragma mark NSObject
@@ -55,8 +37,6 @@
     if (self!=nil){
         self.content = content;
         self.coordinate = content.coordinate;
-        self.mapView = nil;
-        self.annotationView = nil;
     }
     return self;
 }
@@ -73,8 +53,6 @@
 }
 
 - (void)dealloc {
-    [_annotationView release];
-    [_mapView release];
     [super dealloc];
 }
 

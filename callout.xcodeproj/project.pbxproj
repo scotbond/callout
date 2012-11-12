@@ -14,8 +14,6 @@
 		3A6293F2142524D500923860 /* MapUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6293F1142524D500923860 /* MapUtil.m */; };
 		3A6293F51425254B00923860 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6293F41425254B00923860 /* Annotation.m */; };
 		3A6293F614252A4000923860 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0D86B1424B4420081EE3E /* CoreLocation.framework */; };
-		3A9C15F9142688120065D95D /* CalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C15F6142688120065D95D /* CalloutView.m */; };
-		3A9C15FA142688120065D95D /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C15F8142688120065D95D /* CalloutView.xib */; };
 		3A9C15FD142689460065D95D /* BaseCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C15FB142689460065D95D /* BaseCalloutView.m */; };
 		3AB0D85F1424B4420081EE3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0D85E1424B4420081EE3E /* UIKit.framework */; };
 		3AB0D8611424B4420081EE3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0D8601424B4420081EE3E /* Foundation.framework */; };
@@ -31,6 +29,7 @@
 		3AF1D54C145F532D00E55978 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1D54B145F532D00E55978 /* Content.m */; };
 		3AF1D553145F62C600E55978 /* MyCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1D551145F62C600E55978 /* MyCalloutView.m */; };
 		3AF1D555145F62C600E55978 /* MyCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1D552145F62C600E55978 /* MyCalloutView.xib */; };
+		B490343A16505C2600A51A24 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B490343916505C2600A51A24 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +45,7 @@
 		3A6293F31425254B00923860 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		3A6293F41425254B00923860 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		3A936FEE1456EE8800509181 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = callout/Frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
-		3A9C15F314267A7E0065D95D /* AnnotationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationProtocol.h; sourceTree = "<group>"; };
 		3A9C15F514267ABC0065D95D /* AnnotationViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewProtocol.h; sourceTree = "<group>"; };
-		3A9C15F6142688120065D95D /* CalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutView.m; sourceTree = "<group>"; };
-		3A9C15F7142688120065D95D /* CalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutView.h; sourceTree = "<group>"; };
-		3A9C15F8142688120065D95D /* CalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalloutView.xib; sourceTree = "<group>"; };
 		3A9C15FB142689460065D95D /* BaseCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalloutView.m; sourceTree = "<group>"; };
 		3A9C15FC142689460065D95D /* BaseCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalloutView.h; sourceTree = "<group>"; };
 		3AB0D85A1424B4420081EE3E /* callout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = callout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +53,6 @@
 		3AB0D8601424B4420081EE3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3AB0D8621424B4420081EE3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3AB0D86B1424B4420081EE3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		3AB0D8721424B4420081EE3E /* Callout-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Callout-Info.plist"; path = "Classes/support/callout-Info.plist"; sourceTree = "<group>"; };
 		3AB0D8731424B4420081EE3E /* Callout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Callout-Prefix.pch"; path = "Classes/support/callout-Prefix.pch"; sourceTree = "<group>"; };
 		3AB0D8E21424B4430081EE3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/support/main.m; sourceTree = "<group>"; };
 		3AB0D8E61424B4430081EE3E /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = Classes/generic/log/Logger.h; sourceTree = "<group>"; };
@@ -77,6 +71,10 @@
 		3AF1D550145F62C600E55978 /* MyCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCalloutView.h; sourceTree = "<group>"; };
 		3AF1D551145F62C600E55978 /* MyCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCalloutView.m; sourceTree = "<group>"; };
 		3AF1D552145F62C600E55978 /* MyCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCalloutView.xib; sourceTree = "<group>"; };
+		B490343916505C2600A51A24 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B490343B16505C9100A51A24 /* Callout-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Callout-Info.plist"; path = "Classes/support/Callout-Info.plist"; sourceTree = "<group>"; };
+		B490343D16505D9700A51A24 /* MySecondCalloutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySecondCalloutView.h; sourceTree = "<group>"; };
+		B490343E16505D9700A51A24 /* MySecondCalloutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySecondCalloutView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,6 @@
 			children = (
 				3AF1D54A145F532D00E55978 /* Content.h */,
 				3AF1D54B145F532D00E55978 /* Content.m */,
-				3A9C15F314267A7E0065D95D /* AnnotationProtocol.h */,
 				3A6293F31425254B00923860 /* Annotation.h */,
 				3A6293F41425254B00923860 /* Annotation.m */,
 				3A9C15F514267ABC0065D95D /* AnnotationViewProtocol.h */,
@@ -118,9 +115,6 @@
 				3A533AB614255D94005C9625 /* AnnotationView.m */,
 				3A9C15FC142689460065D95D /* BaseCalloutView.h */,
 				3A9C15FB142689460065D95D /* BaseCalloutView.m */,
-				3A9C15F7142688120065D95D /* CalloutView.h */,
-				3A9C15F6142688120065D95D /* CalloutView.m */,
-				3A9C15F8142688120065D95D /* CalloutView.xib */,
 				3A27FDBD14269B66000D885C /* CalloutAnnotation.h */,
 				3A27FDBE14269B66000D885C /* CalloutAnnotation.m */,
 				3A6293F0142524D500923860 /* MapUtil.h */,
@@ -133,6 +127,7 @@
 		3AB0D84F1424B4410081EE3E = {
 			isa = PBXGroup;
 			children = (
+				B490343916505C2600A51A24 /* Default-568h@2x.png */,
 				3AB0D8701424B4420081EE3E /* Classes */,
 				3AB0D85B1424B4420081EE3E /* Products */,
 				3AB0D85D1424B4420081EE3E /* Frameworks */,
@@ -178,7 +173,7 @@
 		3AB0D8711424B4420081EE3E /* support */ = {
 			isa = PBXGroup;
 			children = (
-				3AB0D8721424B4420081EE3E /* Callout-Info.plist */,
+				B490343B16505C9100A51A24 /* Callout-Info.plist */,
 				3AB0D8731424B4420081EE3E /* Callout-Prefix.pch */,
 				3AB0D8E21424B4430081EE3E /* main.m */,
 			);
@@ -223,6 +218,8 @@
 				3AF1D550145F62C600E55978 /* MyCalloutView.h */,
 				3AF1D551145F62C600E55978 /* MyCalloutView.m */,
 				3AF1D552145F62C600E55978 /* MyCalloutView.xib */,
+				B490343D16505D9700A51A24 /* MySecondCalloutView.h */,
+				B490343E16505D9700A51A24 /* MySecondCalloutView.m */,
 			);
 			name = map;
 			path = Classes/iPhone/map;
@@ -283,8 +280,8 @@
 				3AB0D9C21424F58A0081EE3E /* MainWindowiPhone.xib in Resources */,
 				3A533ABC14255E41005C9625 /* emoji-ghost.png in Resources */,
 				3A533ABD14255E41005C9625 /* emoji-ghost@2x.png in Resources */,
-				3A9C15FA142688120065D95D /* CalloutView.xib in Resources */,
 				3AF1D555145F62C600E55978 /* MyCalloutView.xib in Resources */,
+				B490343A16505C2600A51A24 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +300,6 @@
 				3A6293F2142524D500923860 /* MapUtil.m in Sources */,
 				3A6293F51425254B00923860 /* Annotation.m in Sources */,
 				3A533AB714255D94005C9625 /* AnnotationView.m in Sources */,
-				3A9C15F9142688120065D95D /* CalloutView.m in Sources */,
 				3A9C15FD142689460065D95D /* BaseCalloutView.m in Sources */,
 				3A27FDBF14269B66000D885C /* CalloutAnnotation.m in Sources */,
 				3AF1D54C145F532D00E55978 /* Content.m in Sources */,
@@ -355,9 +351,9 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Callout/Classes/support/callout-Prefix.pch";
+				GCC_PREFIX_HEADER = "callout/Classes/support/callout-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Callout/Classes/support/callout-Info.plist";
+				INFOPLIST_FILE = "callout/Classes/support/Callout-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -370,9 +366,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Callout/Classes/support/callout-Prefix.pch";
+				GCC_PREFIX_HEADER = "callout/Classes/support/callout-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Callout/Classes/support/callout-Info.plist";
+				INFOPLIST_FILE = "callout/Classes/support/Callout-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;

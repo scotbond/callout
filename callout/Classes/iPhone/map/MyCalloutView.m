@@ -15,7 +15,8 @@
 
 
 - (id)initWithAnnotation:(CalloutAnnotation*)annotation {
-    self = [super initWithAnnotation:annotation];
+    NSString *identifier = NSStringFromClass([self class]);
+    self = [super initWithAnnotation:annotation reuseIdentifier:identifier];
     self.title.text = [annotation.content.values objectForKey:@"title"];
     return self;
 }

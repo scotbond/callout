@@ -3,7 +3,6 @@
 // See http://stackoverflow.com/questions/8018841/customize-the-mkannotationview-callout/8019308#8019308
 
 #import <MapKit/MapKit.h>
-#import "CalloutView.h"
 #import "AnnotationProtocol.h"
 #import "Content.h"
 
@@ -12,9 +11,8 @@
 /**
  * This object is created and added to the map at AnnotationView's didSelectAnnotationViewInMap:.
  */
-@interface CalloutAnnotation : NSObject <MKAnnotation, AnnotationProtocol>
+@interface CalloutAnnotation : NSObject <MKAnnotation>
 
-@property (nonatomic, retain) BaseCalloutView* calloutView;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, retain) AnnotationView* parentAnnotationView;
 @property (nonatomic, retain) MKMapView* mapView;

@@ -6,7 +6,7 @@
 #import <MapKit/MapKit.h>
 #import "AnnotationViewProtocol.h"
 
-@interface BaseCalloutView : MKAnnotationView <AnnotationViewProtocol>
+@interface BaseCalloutView : MKAnnotationView
 {
 	MKAnnotationView *_parentAnnotationView;
 	MKMapView *_mapView;

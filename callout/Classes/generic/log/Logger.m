@@ -31,7 +31,7 @@
     
     va_list ap;         // define variable ap of type va
     va_start (ap, msg); // initializes ap
-	msg = [[NSString alloc] initWithFormat:msg arguments:ap];
+	msg = [[[NSString alloc] initWithFormat:msg arguments:ap] autorelease];
     va_end (ap);        // invalidates ap
 
     BOOL skipClassInfo = FALSE; // should we add class info?
